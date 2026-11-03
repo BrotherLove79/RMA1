@@ -18,3 +18,8 @@ A responsive classroom web app with a student assignment checklist and a teacher
 - Use **Restore demo data** in the teacher view to return to the starter class and assignments.
 
 The app starts with sample learners and assignments so both views are ready to explore immediately. Do not enter real student information; the MVP has no accounts, server-side storage, privacy controls, or cross-device synchronization.
+
+## Preview
+
+The public preview is deployed from `main` with GitHub Pages after tests pass:
+https://BrotherLove79.github.io/RMA1/
