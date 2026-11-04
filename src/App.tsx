@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import {
+  ArrowUpRight,
   ArrowDown,
   BookOpen,
   Check,
@@ -16,6 +17,9 @@ import {
   UsersRound,
   X,
 } from "lucide-react";
+import familyProgramsImage from "./assets/brown-tree-family-programs.jpg";
+import workshopFlyerImage from "./assets/brown-tree-workshop-flyer.jpg";
+import youthArtsImage from "./assets/brown-tree-youth-arts.jpg";
 import {
   createStarterData,
   readAcademyData,
@@ -297,6 +301,52 @@ function App() {
   );
 }
 
+function HalloweenEvent() {
+  return (
+    <section className="halloween-event" aria-labelledby="halloween-event-title">
+      <div className="event-art-gallery">
+        <img
+          className="event-art-primary"
+          src={youthArtsImage}
+          alt="Brown Tree Art House youth arts concept showing children painting together"
+        />
+        <div className="event-art-pair">
+          <img
+            src={familyProgramsImage}
+            alt="Brown Tree Art House family programs concept"
+          />
+          <img
+            src={workshopFlyerImage}
+            alt="Brown Tree Art House community workshop concept"
+          />
+        </div>
+        <span className="event-art-star event-art-star-one" aria-hidden="true">✦</span>
+        <span className="event-art-star event-art-star-two" aria-hidden="true">✧</span>
+      </div>
+      <div className="event-copy">
+        <span className="event-kicker"><span aria-hidden="true">✦</span> A COMMUNITY ART HOUSE EVENT</span>
+        <h2 id="halloween-event-title">Halloween color, creativity &amp; a little magic</h2>
+        <p>
+          Get inspired by a playful Halloween celebration from Brown Tree Art House:
+          pumpkin colors, friendly monsters, and handmade spooky creations.
+        </p>
+        <div className="event-bottom">
+          <span className="event-detail">Event date and location: check with Brown Tree Art House.</span>
+          <a
+            className="event-link"
+            href="https://github.com/BrotherLove79/BROWN-TREE-ART-HOUSE"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Meet the Art House <ArrowUpRight size={15} />
+          </a>
+        </div>
+      </div>
+      <span className="event-moon" aria-hidden="true">☾</span>
+    </section>
+  );
+}
+
 type StudentViewProps = {
   student: AcademyData["students"][number];
   students: AcademyData["students"];
@@ -334,6 +384,8 @@ function StudentView({
           <ChevronDown size={15} />
         </label>
       </div>
+
+      <HalloweenEvent />
 
       <section className="student-hero">
         <div className="hero-text">
@@ -482,6 +534,8 @@ function TeacherView({ data, stats, onCreate, onEdit, onDelete, onReset }: Teach
         </div>
         <button className="primary-button" type="button" onClick={onCreate}><Plus size={18} /> New assignment</button>
       </div>
+
+      <HalloweenEvent />
 
       <section className="teacher-stats" aria-label="Class summary">
         <div className="stat-card">

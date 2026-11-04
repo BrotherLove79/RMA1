@@ -74,6 +74,27 @@ h1, h2, h3, p { margin-top: 0; }
 .student-picker select, .sort-control select { appearance: none; border: 0; background: transparent; color: #333c50; font-size: 11px; font-weight: 700; outline: none; cursor: pointer; }
 .student-picker > svg { position: absolute; right: 9px; pointer-events: none; }
 
+.halloween-event { min-height: 218px; display: grid; grid-template-columns: minmax(190px, 30%) minmax(0, 1fr); align-items: center; gap: clamp(20px, 3.2vw, 42px); position: relative; overflow: hidden; margin: 0 0 30px; padding: 18px 31px 18px 20px; border: 1px solid #efd6c3; border-radius: 17px; background: linear-gradient(112deg, #fff5eb 0%, #fff8f1 57%, #fff0e5 100%); }
+.event-art-gallery { min-height: 180px; display: flex; align-items: center; justify-content: center; gap: 9px; position: relative; z-index: 1; }
+.event-art-gallery img { display: block; width: 100%; height: 100%; object-fit: cover; border: 3px solid #fff; border-radius: 13px; box-shadow: 0 6px 16px #56321b24; }
+.event-art-primary { max-width: 123px; height: 173px !important; transform: rotate(-4deg); }
+.event-art-pair { display: flex; flex-direction: column; gap: 9px; height: 160px; max-width: 93px; }
+.event-art-pair img { min-height: 0; transform: rotate(3deg); }
+.event-art-pair img + img { transform: rotate(-2deg); }
+.event-art-star { position: absolute; z-index: 2; color: #f3b443; text-shadow: 0 2px #fff; }
+.event-art-star-one { top: 0; left: 16%; font-size: 22px; }
+.event-art-star-two { bottom: 3px; right: 9%; color: #ef875f; font-size: 25px; }
+.event-copy { position: relative; z-index: 2; max-width: 680px; padding: 3px 20px 3px 0; }
+.event-kicker { display: inline-flex; align-items: center; gap: 6px; color: #a45b37; font-size: 9px; font-weight: 800; letter-spacing: 1.4px; }
+.event-kicker > span { color: #e99838; font-size: 14px; }
+.event-copy h2 { max-width: 500px; margin: 8px 0 7px; color: #392a35; font: 900 clamp(20px, 2.2vw, 27px)/1.16 Nunito, sans-serif; letter-spacing: -.5px; }
+.event-copy p { max-width: 560px; margin: 0; color: #756775; font-size: 11px; line-height: 1.65; }
+.event-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 15px; }
+.event-detail { color: #947f73; font-size: 9px; line-height: 1.4; }
+.event-link { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 5px; padding: 8px 10px; border: 1px solid #e8cdbb; border-radius: 8px; background: #fffaf5; color: #854c37; font-size: 9px; font-weight: 700; text-decoration: none; transition: background .15s, border-color .15s; }
+.event-link:hover { border-color: #dfa782; background: #fff; }
+.event-moon { position: absolute; top: -30px; right: 16px; color: #edbe79; opacity: .2; font-size: 116px; line-height: 1; transform: rotate(-19deg); }
+
 .student-hero { position: relative; min-height: 202px; background: linear-gradient(110deg, #f0edff 0%, #f6f2ff 54%, #f8efff 100%); border: 1px solid #e9e4ff; border-radius: 17px; overflow: hidden; display: flex; align-items: center; padding: 26px 34px; margin-bottom: 34px; }
 .hero-text { width: min(61%, 550px); position: relative; z-index: 2; }
 .hero-label { font-size: 9px; letter-spacing: 1.6px; color: #8679cf; font-weight: 800; }
@@ -225,6 +246,10 @@ h1, h2, h3, p { margin-top: 0; }
   .main-content { padding: 33px 28px 24px; }
   .teacher-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-illustration { right: 2%; transform: scale(.85); transform-origin: right center; }
+  .halloween-event { grid-template-columns: minmax(160px, 27%) minmax(0, 1fr); gap: 19px; padding-left: 13px; padding-right: 20px; }
+  .event-art-gallery { gap: 6px; }
+  .event-art-primary { max-width: 105px; }
+  .event-art-pair { max-width: 78px; }
 }
 @media (max-width: 760px) {
   .topbar { height: 66px; padding: 0 17px; }
@@ -244,6 +269,15 @@ h1, h2, h3, p { margin-top: 0; }
   .student-hero { min-height: 185px; padding: 23px 22px; margin-bottom: 27px; }
   .hero-text { width: 72%; }
   .hero-illustration { right: -28px; opacity: .7; transform: scale(.72); transform-origin: right center; }
+  .halloween-event { grid-template-columns: 1fr; gap: 12px; padding: 15px; }
+  .event-art-gallery { min-height: 132px; justify-content: flex-start; padding-left: 17px; }
+  .event-art-primary { width: 91px; height: 126px !important; }
+  .event-art-pair { width: 70px; height: 118px; }
+  .event-art-star-one { left: 7%; }
+  .event-art-star-two { left: 170px; right: auto; }
+  .event-copy { padding: 0 2px 3px; }
+  .event-copy h2 { max-width: 400px; }
+  .event-bottom { align-items: flex-start; flex-direction: column; }
   .assignment-grid, .completed-list { grid-template-columns: 1fr; }
   .assignment-card { padding: 14px; }
   .teacher-stats { gap: 9px; margin-bottom: 24px; }

@@ -27,6 +27,31 @@ describe("Royal Minds Academy app", () => {
     });
   });
 
+  it("shows the Brown Tree Art House Halloween event and concept images", () => {
+    render(<App />);
+
+    expect(screen.getByRole("heading", {
+      name: "Halloween color, creativity & a little magic",
+    })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: /youth arts concept/i })).toHaveAttribute(
+      "src",
+      expect.stringContaining("brown-tree-youth-arts"),
+    );
+    expect(screen.getByRole("img", { name: /family programs concept/i })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: /community workshop concept/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Meet the Art House/i })).toHaveAttribute(
+      "href",
+      "https://github.com/BrotherLove79/BROWN-TREE-ART-HOUSE",
+    );
+    expect(screen.getByText(/Event date and location: check with Brown Tree Art House/i)).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: "Teacher" }));
+    expect(screen.getByRole("heading", {
+      name: "Halloween color, creativity & a little magic",
+    })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Your classroom, at a glance" })).toBeInTheDocument();
+  });
+
   it("lets a teacher create, edit, and delete an assignment", async () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: "Teacher" }));
